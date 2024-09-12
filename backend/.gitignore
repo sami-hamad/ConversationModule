@@ -1,0 +1,9 @@
+# Backend (FastAPI) specific ignores
+venv/
+__pycache__/
+*.py[cod]
+*.env
+
+# OS-specific files (for both frontend and backend)
+.DS_Store
+Thumbs.db
