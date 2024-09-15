@@ -1,0 +1,37 @@
+.root {
+  padding-top: 80px; /* Remove rem() and use px or rem */
+  padding-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ensure the container takes full height */
+}
+
+.title {
+  font-weight: 900;
+  font-size: 34px; /* Correct rem syntax */
+  margin-bottom: var(--mantine-spacing-md);
+  font-family: Greycliff CF, var(--mantine-font-family);
+
+  @media (max-width: 600px) {
+    font-size: 32px;
+  }
+}
+
+.control {
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.mobileImage {
+  @media (min-width: 48em) {
+    display: none;
+  }
+}
+
+.desktopImage {
+  @media (max-width: 47.99em) {
+    display: none;
+  }
+}

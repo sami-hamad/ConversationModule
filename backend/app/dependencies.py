@@ -7,7 +7,7 @@ import jwt
 
 # MongoDB Connection
 client = MongoClient("mongodb://localhost:27017/")
-db = client["epm_database"]
+db = client["mowasalat"]
 users_collection = db["users"]
 
 # Password Hashing
@@ -16,7 +16,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 # JWT Settings
 SECRET_KEY = "af4c80bb5d6d8f1e3b66e5d4f66f5c1b63e6f18e2bfe8cc3a1d1a6d7b2b5e798"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60
+ACCESS_TOKEN_EXPIRE_MINUTES = 120
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
