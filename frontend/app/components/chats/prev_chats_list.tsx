@@ -69,12 +69,14 @@ export default function ChatList({ shouldRefetch, setShouldRefetch }: ChatListPr
     const yesterday = dayjs().subtract(1, 'day').startOf('day');
     const sevenDaysAgo = dayjs().subtract(7, 'day').startOf('day');
     const thirtyDaysAgo = dayjs().subtract(30, 'day').startOf('day');
+    const oneYearAgo = dayjs().subtract(1, 'year').startOf('day');
 
     // Categorize conversations using the utility function
     const todayConversations = categorizeConversations(conversations, today);
     const yesterdayConversations = categorizeConversations(conversations, yesterday, today);
     const previousWeekConversations = categorizeConversations(conversations, sevenDaysAgo, yesterday);
     const previousMonthConversations = categorizeConversations(conversations, thirtyDaysAgo, sevenDaysAgo);
+    const previousYearConversations = categorizeConversations(conversations, oneYearAgo, thirtyDaysAgo);
 
     const handleChatClick = (conversationId: string) => {
         router.push(`/chat/${conversationId}`);
@@ -164,6 +166,7 @@ export default function ChatList({ shouldRefetch, setShouldRefetch }: ChatListPr
                 {renderConversations("Yesterday", yesterdayConversations)}
                 {renderConversations("Previous 7 Days", previousWeekConversations)}
                 {renderConversations("Previous 30 Days", previousMonthConversations)}
+                {renderConversations("Previous Year", previousYearConversations)}
             </Stack>
 
             <Modal
