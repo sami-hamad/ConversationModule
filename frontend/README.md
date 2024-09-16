@@ -1,4 +1,4 @@
-# EPM-Product Front End Pages
+# Front End Pages
 
 - To start the frontend webpage:
    - Make sure you have installed node js
