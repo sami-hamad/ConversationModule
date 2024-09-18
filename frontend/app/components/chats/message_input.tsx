@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
-import { Textarea, Button, Group, ActionIcon, rem, Stack } from '@mantine/core';
+import { Textarea, Button, Group, ActionIcon, rem } from '@mantine/core';
 import { sendMessage, getMessages } from '../../lib/api';
 import { IconArrowUp, IconMicrophone } from '@tabler/icons-react';
 import { theme } from '../../../theme';
-
+import classes from './disabled_sendbtn.module.css'
 interface MessageInputProps {
     conversationId: string;
     sessionToken: string;
@@ -87,6 +87,12 @@ export default function MessageInput({ conversationId, sessionToken, onMessageSe
         }
     };
 
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+        if (event.key === 'Enter' && !event.shiftKey && !isLoading && !isRecording) {
+            event.preventDefault(); // Prevent the default behavior of creating a new line
+            handleSendMessage();
+        }
+    };
 
     return (
         <Group gap="apart" style={{ padding: '10px', scrollbarWidth: 'thin' }} className="textarea-wrapper">
@@ -94,6 +100,7 @@ export default function MessageInput({ conversationId, sessionToken, onMessageSe
                 variant="filled"
                 placeholder="Type your message..."
                 onChange={(e) => setMessageText(e.currentTarget.value)}
+                onKeyDown={handleKeyDown} // Add the keydown event here
                 disabled={isLoading || isRecording} // Disable input while recording or loading
                 style={{ flexGrow: 1 }}
                 autosize
@@ -114,7 +121,15 @@ export default function MessageInput({ conversationId, sessionToken, onMessageSe
                         >
                             <IconMicrophone style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
                         </ActionIcon>
-                        <ActionIcon size={25} radius="xl" color={theme.primaryColor} variant="filled" onClick={handleSendMessage} disabled={isLoading}>
+                        <ActionIcon
+                            size={25}
+                            radius="xl"
+                            color={theme.primaryColor}
+                            variant="filled"
+                            onClick={handleSendMessage}
+                            disabled={isLoading || messageText.trim() === ''}
+                            className={classes.button}
+                        >
                             <IconArrowUp style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
                         </ActionIcon>
                     </Group>
