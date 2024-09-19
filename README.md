@@ -10,6 +10,7 @@ Before getting started, ensure you have the following installed:
 
 - Docker (version 20.10 or later)
 - Docker Compose (version 1.29 or later)
+
 Docker and Docker Compose allow you to run the application in isolated containers with all necessary dependencies. No need to install Node.js, Python, or MongoDB separately.
 
 #### Running the Application with Docker Compose
