@@ -2,9 +2,9 @@ import base64
 from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException
 from bson import ObjectId
-from dependencies import get_current_user
-from dependencies import users_collection
-from models import Conversation, ConversationCreate, FeedbackUpdate, MessageCreate, Message, VoiceMessageCreate
+from app.dependencies import get_current_user
+from app.dependencies import users_collection
+from app.models import Conversation, ConversationCreate, FeedbackUpdate, MessageCreate, Message, VoiceMessageCreate
 import sys, os
 import json
 

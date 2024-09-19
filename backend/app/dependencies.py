@@ -1,3 +1,4 @@
+import os
 from pymongo import MongoClient
 from fastapi.security import OAuth2PasswordBearer
 from passlib.context import CryptContext
@@ -6,7 +7,8 @@ from fastapi import Depends, HTTPException, status
 import jwt
 
 # MongoDB Connection
-client = MongoClient("mongodb://localhost:27017/")
+MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/mowasalat")
+client = MongoClient(MONGO_URI)
 db = client["mowasalat"]
 users_collection = db["users"]
 

@@ -1,12 +1,13 @@
 from fastapi import FastAPI
-from api.auth import router as auth_router
-from api.users import router as users_router
-from api.conversations import router as conversations_router
+from app.api.auth import router as auth_router
+from app.api.users import router as users_router
+from app.api.conversations import router as conversations_router
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 # Allow requests from the frontend (localhost:3000) during development
 origins = [
-    "http://localhost:3000",  # Frontend address
+    "http://localhost:3000",  # Access from local machine
+    "http://frontend:3000",   # Access within Docker
 ]
 
 # Add CORS middleware to your FastAPI app

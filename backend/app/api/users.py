@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from dependencies import users_collection, get_password_hash
-from models import User, UserResponse
+from app.dependencies import users_collection, get_password_hash
+from app.models import User, UserResponse
 
 router = APIRouter()
 
