@@ -3,9 +3,45 @@
 
 This project includes a **front-end** built with **Next.js** and **TypeScript**, and a **back-end** powered by **FastAPI** and **MongoDB**.
 
-## Getting Started
+----------------------------------------
+### Running Application Using Docker
+#### Prerequisites
+Before getting started, ensure you have the following installed:
 
-### Prerequisites
+- Docker (version 20.10 or later)
+- Docker Compose (version 1.29 or later)
+Docker and Docker Compose allow you to run the application in isolated containers with all necessary dependencies. No need to install Node.js, Python, or MongoDB separately.
+
+#### Running the Application with Docker Compose
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/sami-hamad/ConversationModule.git
+   cd ConversationModule
+   ```
+
+2. Build and Run the Application: Use the following command to start both the front-end, back-end, and MongoDB:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+3. Access the Application:
+   - Front-end: Open your browser and navigate to (http://localhost:3000).
+   - Back-end (API): You can interact with the API via the Swagger UI at (http://localhost:8000/docs).
+   - MongoDB: MongoDB will be running in the background, accessible from the application.
+
+4. Create an account
+   1. Create a user by heading to [http://localhost:8000/docs](http://localhost:8000/docs)
+   2. Then locate the add user endpoint
+   3. Click "Try it out"
+   4. Enter your crdentials
+   5. You can then login using the frontend page
+
+----------------------------------------
+
+### Running Application Locally
+#### Prerequisites
 
 Before getting started, ensure you have the following installed:
 
