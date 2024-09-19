@@ -4,7 +4,7 @@
 This project includes a **front-end** built with **Next.js** and **TypeScript**, and a **back-end** powered by **FastAPI** and **MongoDB**.
 
 ----------------------------------------
-### Running Application Using Docker
+### Option 1: Running Application Using Docker
 #### Prerequisites
 Before getting started, ensure you have the following installed:
 
@@ -41,7 +41,7 @@ Docker and Docker Compose allow you to run the application in isolated container
 
 ----------------------------------------
 
-### Running Application Locally
+### Option 2: Running Application Locally
 #### Prerequisites
 
 Before getting started, ensure you have the following installed:
