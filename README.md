@@ -52,11 +52,10 @@ Before getting started, ensure you have the following installed:
 - **pip** (Python package manager)
 - **MongoDB** (local installation or MongoDB Atlas for cloud-based setup)
 
----
 
-## Frontend Setup (Next.js)
+#### Frontend Setup (Next.js)
 
-### Installation & Running the Frontend Server
+##### Installation & Running the Frontend Server
 
 1. Clone the repository:
 
@@ -79,16 +78,16 @@ Before getting started, ensure you have the following installed:
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
----
 
-## Backend Setup (FastAPI)
 
-### Prerequisites
+##### Backend Setup (FastAPI)
+
+###### Prerequisites
 
 - **Python** version 3.10 or later
 - **MongoDB** (either installed locally or using a cloud service like MongoDB Atlas)
 
-### Installation & Running the Backend Server
+###### Installation & Running the Backend Server
 
 1. Clone the backend repository (if it's separate):
 
@@ -127,20 +126,21 @@ Before getting started, ensure you have the following installed:
 
    The backend server will be available at: [http://localhost:8000](http://localhost:8000)
 
----
 
-## MongoDB Setup
 
-### Installing MongoDB Compass (GUI)
-#### MongoDB Compass is a graphical interface for MongoDB that makes it easier to visualize and manage your data. To install it:
+#### MongoDB Setup
+
+###### Installing MongoDB Compass (GUI)
+####### MongoDB Compass is a graphical interface for MongoDB that makes it easier to visualize and manage your data. To install it:
 1. Go to the MongoDB Compass Download Page.
 2. Download the version that matches your operating system.
 3. Install MongoDB Compass by following the instructions for your operating system.
 4. Open MongoDB Compass and connect to your local instance or Atlas cluster by entering the MongoDB URI.
 Once you’ve connected, you can visualize your databases, collections, and documents, and easily interact with MongoDB.
----
 
-## Connecting Frontend to Backend
+
+
+##### Connecting Frontend to Backend
 
 To connect your frontend to the backend, create a `.env.local` file in your Next.js project with the following content:
 
@@ -149,9 +149,8 @@ NEXTAUTH_SECRET=af4c80bb5d6d8f1e3b66e5d4f66f5c1b63e6f18e2bfe8cc3a1d1a6d7b2b5e798
 NEXTAUTH_URL=http://localhost:3000
 ```
 
----
 
-## Running Both Frontend and Backend
+#### Running Both Frontend and Backend
 
 1. Start the backend server by running:
 
